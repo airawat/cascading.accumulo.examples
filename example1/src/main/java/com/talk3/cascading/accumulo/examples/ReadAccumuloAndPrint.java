@@ -3,17 +3,10 @@ package com.talk3.cascading.accumulo.examples;
 import cascading.accumulo.*;
 import java.util.Properties;
 import org.apache.hadoop.mapred.JobConf;
-
-import cascading.flow.FlowDef;
-import cascading.pipe.Pipe;
 import cascading.property.AppProps;
-import cascading.tap.SinkMode;
-import cascading.tap.Tap;
-import cascading.flow.hadoop.HadoopFlowConnector;
 import cascading.flow.hadoop.HadoopFlowProcess;
-import cascading.tap.hadoop.Hfs;
 import cascading.tuple.TupleEntryIterator;
-import cascading.scheme.hadoop.TextDelimited;
+
 
         
 public class ReadAccumuloAndPrint {
@@ -27,13 +20,12 @@ public class ReadAccumuloAndPrint {
 		Properties properties = AppProps.appProps()
 				.setName("ReadAccumuloAndPrint").setVersion("1.0.0")
 				.buildProperties(jobConf);
-
 		// }}
 
 		// {{
 		// ARGUMENTS
-		String accumuloConnectionString = args[1].toString();
-		String accumuloQueryCriteria = args[2].toString();
+		String accumuloConnectionString = args[0].toString();
+		String accumuloQueryCriteria = args[1].toString();
 
 		// }}
 

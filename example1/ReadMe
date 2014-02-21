@@ -2,7 +2,6 @@ The sample program in the “src” directory demonstrates how to use the Cascad
 
 The following are steps to create data, run the sample program and view results.
 
-
 Step 1: Create table in Accumulo
 ================================
 
@@ -31,9 +30,9 @@ insert "b006" "Book" "Name" "The return of Sherlock Holmes"
 insert "b006" "Book" "Published" "1905"
 
 
-Step 3: Run the program
+Step 3a: Run the program
 ====================================================
-hadoop jar <<pathToJar>> ReadAccumuloAndPrint "accumulo://221BakerStreet?instance=inst&user=root&password=xxxxx&zookeepers=zooServerListInclPortNumCSV" "rowKeyRangeStart=b001&rowKeyRangeEnd=b008"
+hadoop jar <<pathToJar>> ReadAccumuloAndPrint "accumulo://<<tableName>>?instance=<<inst>>&user=<<UID>>&password=<<PWD>>&zookeepers=<<zooServerListInclPortNumCSV>>" "rowKeyRangeStart=b001&rowKeyRangeEnd=b008"
 
 E.g.
 hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-obese.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowKeyRangeStart=b001&rowKeyRangeEnd=b008"
@@ -53,3 +52,60 @@ tuple: ['b005', 'Book', 'Name', '', '1389331650744', 'The hounds of Baskerville'
 tuple: ['b005', 'Book', 'Published', '', '1389331650757', '1901']
 tuple: ['b006', 'Book', 'Name', '', '1389331650774', 'The return of Sherlock Holmes']
 tuple: ['b006', 'Book', 'Published', '', '1389331651834', '1905']
+
+Step 3b: Run using regex
+=========================
+
+a) 
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*6$&"
+
+fields: ['rowID', 'colF', 'colQ', 'colVis', 'colTimestamp', 'colVal'] 
+tuple: ['b006', 'Book', 'Name', '', '1393007669300', 'The return of Sherlock Holmes']
+tuple: ['b006', 'Book', 'Published', '', '1393007669337', '1905']
+
+b) 
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*"
+
+fields: ['rowID', 'colF', 'colQ', 'colVis', 'colTimestamp', 'colVal'] 
+tuple: ['b001', 'Book', 'Name', '', '1389331650617', 'A study in scarlet']
+tuple: ['b001', 'Book', 'Published', '', '1389331650629', '1887']
+tuple: ['b002', 'Book', 'Name', '', '1389331650645', 'A sign of four']
+tuple: ['b002', 'Book', 'Published', '', '1389331650657', '1890']
+tuple: ['b003', 'Book', 'Name', '', '1389331650674', 'The adventures of Sherlock Holmes']
+tuple: ['b003', 'Book', 'Published', '', '1389331650687', '1892']
+tuple: ['b004', 'Book', 'Name', '', '1389331650705', 'The memoirs of Sherlock Holmes']
+tuple: ['b004', 'Book', 'Published', '', '1389331650721', '1893']
+tuple: ['b005', 'Book', 'Name', '', '1389331650744', 'The hounds of Baskerville']
+tuple: ['b005', 'Book', 'Published', '', '1389331650757', '1901']
+tuple: ['b006', 'Book', 'Name', '', '1389331650774', 'The return of Sherlock Holmes']
+tuple: ['b006', 'Book', 'Published', '', '1389331651834', '1905']
+
+c) 
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "columnQualifierRegex=N.*"
+
+fields: ['rowID', 'colF', 'colQ', 'colVis', 'colTimestamp', 'colVal'] 
+tuple: ['b001', 'Book', 'Name', '', '1393007668782', 'A study in scarlet']
+tuple: ['b002', 'Book', 'Name', '', '1393007669025', 'A sign of four']
+tuple: ['b003', 'Book', 'Name', '', '1393007669083', 'The adventures of Sherlock Holmes']
+tuple: ['b004', 'Book', 'Name', '', '1393007669148', 'The memoirs of Sherlock Holmes']
+tuple: ['b005', 'Book', 'Name', '', '1393007669228', 'The hounds of Baskerville']
+tuple: ['b006', 'Book', 'Name', '', '1393007669300', 'The return of Sherlock Holmes']
+
+d)
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxx&zookeepers=cdh-dn01:2181" "rowKeyRangeStart=b004&rowKeyRangeEnd=b006&columnQualifierRegex=N.*"
+
+fields: ['rowID', 'colF', 'colQ', 'colVis', 'colTimestamp', 'colVal'] 
+tuple: ['b004', 'Book', 'Name', '', '1393007669148', 'The memoirs of Sherlock Holmes']
+tuple: ['b005', 'Book', 'Name', '', '1393007669228', 'The hounds of Baskerville']
+tuple: ['b006', 'Book', 'Name', '', '1393007669300', 'The return of Sherlock Holmes']
+
+e)
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*&columnQualifierRegex=P.*"
+
+fields: ['rowID', 'colF', 'colQ', 'colVis', 'colTimestamp', 'colVal'] 
+tuple: ['b001', 'Book', 'Published', '', '1393007668959', '1887']
+tuple: ['b002', 'Book', 'Published', '', '1393007669050', '1890']
+tuple: ['b003', 'Book', 'Published', '', '1393007669106', '1892']
+tuple: ['b004', 'Book', 'Published', '', '1393007669179', '1893']
+tuple: ['b005', 'Book', 'Published', '', '1393007669258', '1901']
+tuple: ['b006', 'Book', 'Published', '', '1393007669337', '1905']

@@ -19,10 +19,14 @@ example 4:
 ==========
 Demonstrates how to export data in Accumulo to HDFS, after transposing to a flat, delimited format with column headers.
 
-example 5:
+example 5: [WIP]
 ==========
 Demonstrates how to import data in HDFS, in a flat delimited format into Accumulo.
 
-example 6:
+example 6: [WIP]
 ==========
 Demonstrates how to read data in Accumulo and write to Accumulo.
+
+example 7: [WIP]
+==========
+Demonstrates how to read data in mysql and write to Accumulo.

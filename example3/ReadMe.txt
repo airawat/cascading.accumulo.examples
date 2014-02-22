@@ -6,20 +6,18 @@ Parameter 1 = Accumulo connection string
 Parameter 2 = Accumulo query criteria
 Parameter 3 = HDFS path for Accumulo dump
 Parameter 4 = Number of reducers
+Parameter 5 = HDFS path for failures
 
 Construct of Accumulo connection string:
 ============================================
 accumulo://table1?instance=myinstance&user=root&password=secret&zookeepers=CSVListofZooserver:portNum&auths=PRIVATE,PUBLIC&write_threads=3
 [Modeled after construct in Accumulo-Pig]
-
 Required:
 table, instance, user, password, zookeepers=CSVListofZooserver:portNum
-
 
 Construct of query critera:
 ============================================
 columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowRegex=*&columnFamilyRegex=&columnQualifierRegex=*&valueRegex=*
-
 Required elements:
 rowkey range and/or rowRegex
 
@@ -27,7 +25,7 @@ rowkey range and/or rowRegex
 Run the program
 ============================================
 E.g.
-hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*" "cascading.accumulo.examples/output-221BakerStreet-HDFSDump" "1"
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*" "cascading.accumulo.examples/output-AccumuloTableDump" "1" "cascading.accumulo.examples/Trap-AccumuloTableDump" 
 
 
 Verify

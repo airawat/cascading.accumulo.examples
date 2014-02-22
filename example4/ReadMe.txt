@@ -1,3 +1,6 @@
+A) ABOUT THE PROGRAM
+============================================
+
 The sample program in the “src” directory demonstrates how to export data in Accumulo to HDFS, in a flat format, with column headers, using the Cascading extensions for Accumulo.  
 
 The program accepts -
@@ -31,8 +34,9 @@ columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowR
 Required elements:
 rowkey range and/or rowRegex
 
-Data in Accumulo used in sample program
+B) SAMPLE DATA USED IN PROGRAM
 ============================================
+
 Is from example 1
 
 root@indra> table 221BakerStreet
@@ -50,8 +54,9 @@ b005 Book:Published []    1901
 b006 Book:Name []    The return of Sherlock Holmes
 b006 Book:Published []    1905
 
-Run the program
+C) EXECUTE PROGRAM
 ============================================
+
 E.g.
 hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*" "Book_ID,Name,Published" "," "TRUE" "cascading.accumulo.examples/output-AccumuloExport" "1" "cascading.accumulo.examples/Trap-AccumuloExport"
 

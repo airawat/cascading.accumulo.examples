@@ -31,6 +31,27 @@ columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowR
 Required elements:
 rowkey range and/or rowRegex
 
+Data in Accumulo used in sample program
+============================================
+Is from example 1
+
+root@indra> table 221BakerStreet
+root@indra 221BakerStreet> scan
+b001 Book:Name []    A study in scarlet
+b001 Book:Published []    1887
+b002 Book:Name []    A sign of four
+b002 Book:Published []    1890
+b003 Book:Name []    The adventures of Sherlock Holmes
+b003 Book:Published []    1892
+b004 Book:Name []    The memoirs of Sherlock Holmes
+b004 Book:Published []    1893
+b005 Book:Name []    The hounds of Baskerville
+b005 Book:Published []    1901
+b006 Book:Name []    The return of Sherlock Holmes
+b006 Book:Published []    1905
+
+
+
 Run the program
 ============================================
 E.g.

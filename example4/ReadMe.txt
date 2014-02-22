@@ -50,8 +50,6 @@ b005 Book:Published []    1901
 b006 Book:Name []    The return of Sherlock Holmes
 b006 Book:Published []    1905
 
-
-
 Run the program
 ============================================
 E.g.

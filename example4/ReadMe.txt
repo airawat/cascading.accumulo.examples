@@ -34,7 +34,7 @@ rowkey range and/or rowRegex
 Run the program
 ============================================
 E.g.
-hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*" "Book_ID,Name,Published" "," "TRUE" "cascading.accumulo.examples/output-AccumuloExport" "2" "cascading.accumulo.examples/Trap-AccumuloExport"
+hadoop jar cascading.accumulo.examples/jars/cascading.accumulo.examples-1.0-jar-with-dependencies.jar "accumulo://221BakerStreet?instance=indra&user=root&password=xxxxx&zookeepers=cdh-dn01:2181" "rowRegex=.*" "Book_ID,Name,Published" "," "TRUE" "cascading.accumulo.examples/output-AccumuloExport" "1" "cascading.accumulo.examples/Trap-AccumuloExport"
 
 Results
 ============================================
@@ -44,7 +44,6 @@ Book_ID,Name,Published
 b002,A sign of four,1890
 b004,The memoirs of Sherlock Holmes,1893
 b006,The return of Sherlock Holmes,1905
-Book_ID,Name,Published
 b001,A study in scarlet,1887
 b003,The adventures of Sherlock Holmes,1892
 b005,The hounds of Baskerville,1901

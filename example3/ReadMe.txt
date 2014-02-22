@@ -1,7 +1,6 @@
-The sample program in the “src” directory demonstrates how to dump (all the data) data in Accumulo to HDFS using the Cascading extensions for Accumulo.  The program output is exactly as it is laid out in Accumulo.  The next example transposes the data before writing to HDFS.
+The sample program in the “src” directory demonstrates how to dump (all the) data in Accumulo to HDFS using the Cascading extensions for Accumulo.  The program output is exactly as the data is laid out in Accumulo.  The next example transposes the data before writing to HDFS.
 
-
-Parameters:
+Program parameters:
 ============================================
 Parameter 1 = Accumulo connection string
 Parameter 2 = Accumulo query criteria
@@ -21,8 +20,8 @@ Construct of query critera:
 ============================================
 columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowRegex=*&columnFamilyRegex=&columnQualifierRegex=*&valueRegex=*
 
-Required:
-(rowKeyRangeStart, rowKeyRangeEnd=X0005) and/or rowRegex
+Required elements:
+rowkey range and/or rowRegex
 
 
 Run the program

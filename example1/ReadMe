@@ -11,25 +11,20 @@ Construct of Accumulo connection string parameter:
 ==================================================
 accumulo://table1?instance=myinstance&user=root&password=secret&zookeepers=CSVListofZooserver:portNum&auths=PRIVATE,PUBLIC&write_threads=3
 [Modeled after construct in Accumulo-Pig]
-
 Required:
 table, instance, user, password, zookeepers=CSVListofZooserver:portNum
 
 Construct of query criteria parameter:
 ============================================
 columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowRegex=*&columnFamilyRegex=&columnQualifierRegex=*&valueRegex=*
-
-Required:
-(rowKeyRangeStart, rowKeyRangeEnd=X0005) and/or rowRegex
+Required:(rowKeyRangeStart, rowKeyRangeEnd=X0005) and/or rowRegex
 
 Step 1: Create table in Accumulo
 ================================
 createtable 221BakerStreet
 
-
 Step 2: Insert some sample data
 ===============================
-
 insert "b001" "Book" "Name" "A study in scarlet"
 insert "b001" "Book" "Published" "1887" 
 

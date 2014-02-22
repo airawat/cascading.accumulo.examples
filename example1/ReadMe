@@ -15,18 +15,15 @@ accumulo://table1?instance=myinstance&user=root&password=secret&zookeepers=CSVLi
 Required:
 table, instance, user, password, zookeepers=CSVListofZooserver:portNum
 
-Construct of query critera parameter:
+Construct of query criteria parameter:
 ============================================
 columns=colFam1|cq1,colFam1|cq2&rowKeyRangeStart=X0001&rowKeyRangeEnd=X0005&rowRegex=*&columnFamilyRegex=&columnQualifierRegex=*&valueRegex=*
 
 Required:
 (rowKeyRangeStart, rowKeyRangeEnd=X0005) and/or rowRegex
 
-
-
 Step 1: Create table in Accumulo
 ================================
-
 createtable 221BakerStreet
 
 

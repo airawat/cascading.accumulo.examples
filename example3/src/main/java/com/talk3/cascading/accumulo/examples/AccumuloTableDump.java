@@ -81,7 +81,7 @@ public class AccumuloTableDump {
 
 	// {{
         // EXECUTE
-        Flow flow = new HadoopFlowConnector(properties).connect("Tabe dump",
+        Flow flow = new HadoopFlowConnector(properties).connect("AccumuloTableDump",
                 sourceTapAccumulo, sinkTapHDFS, trapTapHDFS,readPipe);
         flow.complete();
 	// }}

@@ -8,7 +8,7 @@ It covers the following operations:
 3.  Check if table exists
 [parameters: Accumulo connection string, "checkIfTableExists"]
 4.  Flush specific key range
-[parameters: Accumulo connection string, "flushKeyRange",rangeStartRowKey, rangeEndRowKey]
+[parameters: Accumulo connection string, "flushKeyRange", rangeStartRowKey, rangeEndRowKey]
 5.  Flush
 [parameters: Accumulo connection string, "flush"]
 6.  Delete table

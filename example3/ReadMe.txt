@@ -1,4 +1,4 @@
-The sample program in the “src” directory demonstrates how to dump (all the) data in Accumulo to HDFS using the Cascading extensions for Accumulo.  The program output is exactly as the data is laid out in Accumulo.  The next example transposes the data before writing to HDFS.
+The sample program in the “src” directory demonstrates how to dump (all the) data in Accumulo to HDFS using the Cascading extensions for Accumulo.  The program output is exactly as the data is laid out in Accumulo.  The next example transposes the data before writing to HDFS, and also includes demonstrates providing a field delimiter, and including headers.
 
 Program parameters:
 ============================================

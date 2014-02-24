@@ -23,7 +23,7 @@ Parameter 8 = HDFS path for failures
 
 Construct of Accumulo connection string:
 ============================================
-accumulo://table1?instance=myinstance&user=root&password=secret&zookeepers=CSVListofZooserver:portNum&auths=PRIVATE,PUBLIC&write_threads=3
+accumulo://table1?instance=myinstance&user=root&password=secret&zookeepers=CSVListofZooserver:portNum[&auths=PRIVATE,PUBLIC&write_threads=3]
 [Modeled after construct in Accumulo-Pig]
 Required:
 table, instance, user, password, zookeepers=CSVListofZooserver:portNum

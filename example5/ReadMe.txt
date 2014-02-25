@@ -1,4 +1,4 @@
-The sample program (very basic) in the “src” directory demonstrates how to read data in a flat delimited file with a header, in HDFS, transpose it, and save to Accumulo.
+The sample (very basic) program in the “src” directory demonstrates how to read data in a flat delimited file with a header, in HDFS, transpose it, and save to Accumulo - using Cascading and Cascading extensions for Accumulo.
 
 The data used is in this program is from example 4.
 

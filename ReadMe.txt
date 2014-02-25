@@ -23,10 +23,10 @@ example 5:
 ==========
 Demonstrates how to import data in HDFS, in a flat delimited format into Accumulo.
 
-example 6: [WIP]
+example 6:
 ==========
-Demonstrates how to read data in Accumulo and write to Accumulo.
+Demonstrates how to read data in Accumulo and write (back) to Accumulo - useful when you want to read-transform-write.
 
-example 7: [WIP]
+example 7:
 ==========
 Demonstrates how to read data in mysql and write to Accumulo.

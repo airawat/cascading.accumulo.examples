@@ -29,4 +29,4 @@ Demonstrates how to read data in Accumulo and write (back) to Accumulo - useful 
 
 example 7:
 ==========
-Demonstrates how to read data in mysql and write to Accumulo.
+Demonstrates how to export data in Accumulo into Mysql

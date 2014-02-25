@@ -2,6 +2,10 @@ cascading.accumulo.examples
 ===========================
 This repository includes a set of programs that demonstrate how to use Cascading extensions for Accumulo developed by talk3.
 Versions tested: Cascading 2.5.2, and Accumulo 1.5.0.
+Tested on: 20140225
+
+Source code for the Cascading extensions for Accumulo is available at:
+https://github.com/airawat/cascading.accumulo
 
 example 1:
 ==========

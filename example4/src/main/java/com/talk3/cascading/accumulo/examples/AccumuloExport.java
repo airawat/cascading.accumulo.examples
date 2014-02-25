@@ -1,7 +1,6 @@
 package com.talk3.cascading.accumulo.examples;
 
 import java.util.Properties;
-
 import org.apache.hadoop.mapred.JobConf;
 import cascading.flow.Flow;
 import cascading.flow.FlowDef;
@@ -12,10 +11,8 @@ import cascading.property.AppProps;
 import cascading.tap.SinkMode;
 import cascading.tap.Tap;
 import cascading.flow.hadoop.HadoopFlowConnector;
-import cascading.flow.hadoop.HadoopFlowProcess;
 import cascading.pipe.Every;
 import cascading.pipe.GroupBy;
-import cascading.pipe.assembly.Retain;
 import cascading.scheme.hadoop.TextDelimited;
 import cascading.tap.hadoop.Hfs;
 import cascading.scheme.hadoop.TextLine;
@@ -32,7 +29,7 @@ public class AccumuloExport {
                     + "(1)Connection string, "
                     + "(2)query criteria, "
                     + "(3)output fields declarator, "
-                    + "(4)output field delimiter (should match column qualifier name exactly)"
+                    + "(4)output field delimiter (should match column qualifier name exactly) "
                     + "(5)output display headers (TRUE/FALSE), "
                     + "(6)output HDFS path, "
                     + "(7)number of reducers, "
@@ -72,7 +69,6 @@ public class AccumuloExport {
 
         // {{
         // SOURCE tap - Accumulo
-        HadoopFlowProcess hfp = new HadoopFlowProcess(jobConf);
         AccumuloTap sourceTapAccumulo = new AccumuloTap(accumuloConnectionString,
                 new AccumuloScheme(accumuloQueryCriteria), SinkMode.REPLACE);
         // }}
